@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <BT_SettingTitle_DemandModifier>Trader demand modifier</BT_SettingTitle_DemandModifier>
+  <BT_SettingTitle_DemandHintThreshold>Trader demand modifier show threshold</BT_SettingTitle_DemandHintThreshold>
+  <BT_SettingTitle_DemandPriceTypeThreshold>Trader demand price type threshold</BT_SettingTitle_DemandPriceTypeThreshold>
+  <BT_SettingDesc_DemandModifier>Each trader has a random demand for each item.\nDefault value: 0.4</BT_SettingDesc_DemandModifier>
+  <BT_SettingDesc_DemandHintThreshold>Minimum trader demand for a good to show colored hint on trading screen.\nDefault value: 0.25</BT_SettingDesc_DemandHintThreshold>
+  <BT_SettingDesc_DemandPriceTypeThreshold>Maximum trader price type modifier value at which demand modifier became 0. Intermediate values are interpolated.\nDefault value: 0.5</BT_SettingDesc_DemandPriceTypeThreshold>
+  <BT_SettingTitle_ShowAdvanced>Show advanced settings</BT_SettingTitle_ShowAdvanced>
+  <BT_SettingDesc_ShowAdvanced>This will allow to modify vanilla trading price calculation.</BT_SettingDesc_ShowAdvanced>
+  <BT_SettingTitle_MinimalPrice>Minimal price</BT_SettingTitle_MinimalPrice>
+  <BT_SettingTitle_SellingModifier>Base selling modifier</BT_SettingTitle_SellingModifier>
+  <BT_SettingTitle_BuyingModifier>Base buying modifier</BT_SettingTitle_BuyingModifier>
+  <BT_SettingTitle_NegotiatorBonus>Negotiator bonus</BT_SettingTitle_NegotiatorBonus>
+  <BT_SettingTitle_FactionBaseBonus>Trading with faction base bonus</BT_SettingTitle_FactionBaseBonus>
+  <BT_SettingTitle_DifficultyMultEff>Difficulty multiplier effect</BT_SettingTitle_DifficultyMultEff>
+  <BT_SettingTitle_PricetypeMultEff>Price type multiplier effect</BT_SettingTitle_PricetypeMultEff>
+  <BT_SettingTitle_SellPriceFactorBias>Sell price factor bias</BT_SettingTitle_SellPriceFactorBias>
+  <BT_SettingTitle_SellPriceFactorMultEff>Sell price factor multiplier effect</BT_SettingTitle_SellPriceFactorMultEff>
+  <BT_SettingDesc_MinimalPrice>Minimal price for buying. Minimal price for selling is multiplied by 0.02.\nDefault value: 0.5</BT_SettingDesc_MinimalPrice>
+  <BT_SettingDesc_SellingModifier>Base modifier for selling.\nDefault value: 0.4</BT_SettingDesc_SellingModifier>
+  <BT_SettingDesc_BuyingModifier>Base modifier for buying.\nDefault value: 0.4</BT_SettingDesc_BuyingModifier>
+  <BT_SettingDesc_NegotiatorBonus>Negotiator bonus for a colonist with max Social skill.\nDefault value: 0.3</BT_SettingDesc_NegotiatorBonus>
+  <BT_SettingDesc_FactionBaseBonus>Trading with faction base bonus.\nDefault value: 0.02</BT_SettingDesc_FactionBaseBonus>
+  <BT_SettingDesc_DifficultyMultEff>Difficulty multiplier effect.\nDefault value: 1</BT_SettingDesc_DifficultyMultEff>
+  <BT_SettingDesc_PricetypeMultEff>Price type multiplier effect.\nDefault value: 1</BT_SettingDesc_PricetypeMultEff>
+  <BT_SettingDesc_SellPriceFactorBias>Sell price factor bias. Sell price factor multiplier equal to: (sellPriceFactor + bias) x effect.\nDefault value: 0</BT_SettingDesc_SellPriceFactorBias>
+  <BT_SettingDesc_SellPriceFactorMultEff>Sell price factor multiplier effect. Sell price factor multiplier equal to: (sellPriceFactor + bias) x effect.\nDefault value: 1</BT_SettingDesc_SellPriceFactorMultEff>
+</LanguageData>

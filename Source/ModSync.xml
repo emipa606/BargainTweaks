@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModSyncNinjaData>
+  <ID>beb01e87-4d61-438b-8c2c-bc9f5caa5168</ID>
+  <ModName>Bargain Tweaks</ModName>
+  <Version>1.1.2.0</Version>
+  <SaveBreaking>False</SaveBreaking>
+  <Host name="Direct">
+    <AboutUri>https://dl.dropboxusercontent.com/s/0kvc0fp50ezxmob/About.xml</AboutUri>
+    <ModSyncUri>https://dl.dropboxusercontent.com/s/7o6jwjipcc2732k/ModSync.xml</ModSyncUri>
+    <DownloadUri>https://ludeon.com/forums/index.php?topic=47831.0</DownloadUri>
+  </Host>
+</ModSyncNinjaData>

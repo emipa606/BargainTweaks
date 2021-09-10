@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <BT_DemandMod_High>trader need this</BT_DemandMod_High>
+  <BT_DemandMod_Low>trader don't need this</BT_DemandMod_Low>
+  <BT_PriceCapped>Price capped</BT_PriceCapped>
+  <BT_BonusCapped>Bonus capped</BT_BonusCapped>
+</LanguageData>
