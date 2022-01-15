@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <name>Bargain Tweaks (Continued)</name>
   <packageId>Mlie.BargainTweaks</packageId>
@@ -58,4 +58,3 @@ Should be compatible with other mods, that don't change trading screen. Does not
 [/list]
 </description>
 </ModMetaData>
-

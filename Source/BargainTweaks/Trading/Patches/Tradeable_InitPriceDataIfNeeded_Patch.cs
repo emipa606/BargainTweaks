@@ -1,36 +1,35 @@
 using HarmonyLib;
 using RimWorld;
 
-namespace BargainTweaks
-{
-    // private void Tradeable::InitPriceDataIfNeeded()
-    [HarmonyPatch(typeof(Tradeable))]
-    [HarmonyPatch("InitPriceDataIfNeeded")]
-    public static class Tradeable_InitPriceDataIfNeeded_Patch
-    {
-        public static bool Prefix(ref Tradeable __instance, ref bool __state)
-        {
-            if (IsRealTrade.isIt())
-            {
-                __state = new BargainItem(__instance, new BargainOffer(__instance))
-                    .IsInitialized();
-            }
+namespace BargainTweaks;
 
-            return true;
+// private void Tradeable::InitPriceDataIfNeeded()
+[HarmonyPatch(typeof(Tradeable))]
+[HarmonyPatch("InitPriceDataIfNeeded")]
+public static class Tradeable_InitPriceDataIfNeeded_Patch
+{
+    public static bool Prefix(ref Tradeable __instance, ref bool __state)
+    {
+        if (IsRealTrade.isIt())
+        {
+            __state = new BargainItem(__instance, new BargainOffer(__instance))
+                .IsInitialized();
         }
 
-        public static void Postfix(ref Tradeable __instance, ref bool __state)
-        {
-            if (!IsRealTrade.isIt())
-            {
-                return;
-            }
+        return true;
+    }
 
-            if (!__state)
-            {
-                new BargainItem(__instance, new BargainOffer(__instance))
-                    .RecalculatePrice();
-            }
+    public static void Postfix(ref Tradeable __instance, ref bool __state)
+    {
+        if (!IsRealTrade.isIt())
+        {
+            return;
+        }
+
+        if (!__state)
+        {
+            new BargainItem(__instance, new BargainOffer(__instance))
+                .RecalculatePrice();
         }
     }
 }
