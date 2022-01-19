@@ -8,6 +8,8 @@
   <BT_SettingDesc_DemandPriceTypeThreshold>Maximum trader price type modifier value at which demand modifier became 0. Intermediate values are interpolated.\nDefault value: 0.5</BT_SettingDesc_DemandPriceTypeThreshold>
   <BT_SettingTitle_noSellCap>No sell prices cap</BT_SettingTitle_noSellCap>
   <BT_SettingDesc_noSellCap>Normally sell-prices are capped to the buy-price, checking this box will remove this limit. Just dont abuse it :)</BT_SettingDesc_noSellCap>
+  <BT_SettingTitle_invertedColors>Invert bargain colors</BT_SettingTitle_invertedColors>
+  <BT_SettingDesc_invertedColors>Checking this will invert the colors for bargains, switching the red and green around</BT_SettingDesc_invertedColors>
   <BT_SettingTitle_ShowAdvanced>Show advanced settings</BT_SettingTitle_ShowAdvanced>
   <BT_SettingDesc_ShowAdvanced>This will allow to modify vanilla trading price calculation.</BT_SettingDesc_ShowAdvanced>
   <BT_SettingTitle_MinimalPrice>Minimal price</BT_SettingTitle_MinimalPrice>

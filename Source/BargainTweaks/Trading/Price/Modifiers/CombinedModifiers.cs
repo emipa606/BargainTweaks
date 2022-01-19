@@ -1,46 +1,45 @@
 using System.Collections.Generic;
 
-namespace BargainTweaks
+namespace BargainTweaks;
+
+public class CombinedModifiers : IPriceModifiers
 {
-    public class CombinedModifiers : IPriceModifiers
+    private readonly IPriceModifiers priceModifiers;
+
+    public CombinedModifiers(IPriceModifiers priceModifiers)
     {
-        private readonly IPriceModifiers priceModifiers;
+        this.priceModifiers = priceModifiers;
+    }
 
-        public CombinedModifiers(IPriceModifiers priceModifiers)
+    public List<PriceModifier> Bonuses()
+    {
+        return priceModifiers.Bonuses();
+    }
+
+    public List<PriceModifier> Multipliers()
+    {
+        return priceModifiers.Multipliers();
+    }
+
+    public float CommonBonus()
+    {
+        var bonus = 1f;
+        foreach (var pm in priceModifiers.Bonuses())
         {
-            this.priceModifiers = priceModifiers;
+            bonus = bonus + pm.Value();
         }
 
-        public List<PriceModifier> Bonuses()
+        return bonus;
+    }
+
+    public float CommonMultiplier()
+    {
+        var mult = 1f;
+        foreach (var pm in priceModifiers.Multipliers())
         {
-            return priceModifiers.Bonuses();
+            mult = mult * pm.Value();
         }
 
-        public List<PriceModifier> Multipliers()
-        {
-            return priceModifiers.Multipliers();
-        }
-
-        public float CommonBonus()
-        {
-            var bonus = 1f;
-            foreach (var pm in priceModifiers.Bonuses())
-            {
-                bonus = bonus + pm.Value();
-            }
-
-            return bonus;
-        }
-
-        public float CommonMultiplier()
-        {
-            var mult = 1f;
-            foreach (var pm in priceModifiers.Multipliers())
-            {
-                mult = mult * pm.Value();
-            }
-
-            return mult;
-        }
+        return mult;
     }
 }

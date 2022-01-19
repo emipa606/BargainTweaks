@@ -17,6 +17,7 @@ public class Settings : ModSettings
     // Multipliers effect
     public float difficultyMultEff = 1.0f;
     public float factionBaseBonus = 0.02f;
+    public bool invertedColors;
 
     public float minimalPrice = 0.5f;
 
@@ -190,6 +191,11 @@ public class Settings : ModSettings
             "BT_SettingTitle_noSellCap".Translate(),
             ref noSellCap,
             "BT_SettingDesc_noSellCap".Translate()
+        );
+        list.CheckboxLabeled(
+            "BT_SettingTitle_invertedColors".Translate(),
+            ref invertedColors,
+            "BT_SettingDesc_invertedColors".Translate()
         );
     }
 

@@ -1,25 +1,24 @@
 using UnityEngine;
 using Verse;
 
-namespace BargainTweaks
+namespace BargainTweaks;
+
+internal class BargainTweaks : Mod
 {
-    internal class BargainTweaks : Mod
+    public static Settings settings;
+
+    public BargainTweaks(ModContentPack content) : base(content)
     {
-        public static Settings settings;
+        settings = GetSettings<Settings>();
+    }
 
-        public BargainTweaks(ModContentPack content) : base(content)
-        {
-            settings = GetSettings<Settings>();
-        }
+    public override string SettingsCategory()
+    {
+        return "Bargain Tweaks";
+    }
 
-        public override string SettingsCategory()
-        {
-            return "Bargain Tweaks";
-        }
-
-        public override void DoSettingsWindowContents(Rect inRect)
-        {
-            settings.DoWindowContents(inRect);
-        }
+    public override void DoSettingsWindowContents(Rect inRect)
+    {
+        settings.DoWindowContents(inRect);
     }
 }

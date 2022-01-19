@@ -1,48 +1,47 @@
 using RimWorld;
 using UnityEngine;
 
-namespace BargainTweaks
+namespace BargainTweaks;
+
+public class BargainBuyPrice : IBargainPrice
 {
-    public class BargainBuyPrice : IBargainPrice
+    private readonly BargainBasePrice basePrice;
+
+    public BargainBuyPrice(Tradeable item) : this(
+        item,
+        new BuyModifiers(item)
+    )
     {
-        private readonly BargainBasePrice basePrice;
+    }
 
-        public BargainBuyPrice(Tradeable item) : this(
+    public BargainBuyPrice(Tradeable item, IPriceModifiers priceModifiers) : this(
+        item,
+        new CombinedModifiers(priceModifiers)
+    )
+    {
+    }
+
+    public BargainBuyPrice(Tradeable item, CombinedModifiers modifiers) : this(
+        new BargainBasePrice(
             item,
-            new BuyModifiers(item)
+            modifiers
         )
-        {
-        }
+    )
+    {
+    }
 
-        public BargainBuyPrice(Tradeable item, IPriceModifiers priceModifiers) : this(
-            item,
-            new CombinedModifiers(priceModifiers)
-        )
-        {
-        }
+    public BargainBuyPrice(BargainBasePrice basePrice)
+    {
+        this.basePrice = basePrice;
+    }
 
-        public BargainBuyPrice(Tradeable item, CombinedModifiers modifiers) : this(
-            new BargainBasePrice(
-                item,
-                modifiers
-            )
-        )
-        {
-        }
+    public float Value()
+    {
+        return Mathf.Max(BargainTweaks.settings.minimalPrice, basePrice.Value());
+    }
 
-        public BargainBuyPrice(BargainBasePrice basePrice)
-        {
-            this.basePrice = basePrice;
-        }
-
-        public float Value()
-        {
-            return Mathf.Max(BargainTweaks.settings.minimalPrice, basePrice.Value());
-        }
-
-        public CombinedModifiers Modifiers()
-        {
-            return basePrice.Modifiers();
-        }
+    public CombinedModifiers Modifiers()
+    {
+        return basePrice.Modifiers();
     }
 }

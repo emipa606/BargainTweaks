@@ -1,7 +1,6 @@
-namespace BargainTweaks
+namespace BargainTweaks;
+
+public interface IPriceTooltip
 {
-    public interface IPriceTooltip
-    {
-        string Text();
-    }
+    string Text();
 }

@@ -1,12 +1,11 @@
 using RimWorld;
 
-namespace BargainTweaks
+namespace BargainTweaks;
+
+public static class IsRealTrade
 {
-    public static class IsRealTrade
+    public static bool isIt()
     {
-        public static bool isIt()
-        {
-            return TradeSession.TradeCurrency != TradeCurrency.Favor;
-        }
+        return TradeSession.TradeCurrency != TradeCurrency.Favor;
     }
 }

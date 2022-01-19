@@ -1,38 +1,37 @@
 using RimWorld;
 using Verse;
 
-namespace BargainTweaks
+namespace BargainTweaks;
+
+public class SellPriceTooltip : IPriceTooltip
 {
-    public class SellPriceTooltip : IPriceTooltip
+    private readonly BasePriceTooltip baseTooltip;
+
+    public SellPriceTooltip(Tradeable item) : this(
+        item,
+        new BargainSellPrice(item)
+    )
     {
-        private readonly BasePriceTooltip baseTooltip;
+    }
 
-        public SellPriceTooltip(Tradeable item) : this(
+    public SellPriceTooltip(Tradeable item, IBargainPrice bargainPrice) : this(
+        new BasePriceTooltip(
             item,
-            new BargainSellPrice(item)
+            bargainPrice
         )
-        {
-        }
+    )
+    {
+    }
 
-        public SellPriceTooltip(Tradeable item, IBargainPrice bargainPrice) : this(
-            new BasePriceTooltip(
-                item,
-                bargainPrice
-            )
-        )
-        {
-        }
+    public SellPriceTooltip(BasePriceTooltip baseTooltip)
+    {
+        this.baseTooltip = baseTooltip;
+    }
 
-        public SellPriceTooltip(BasePriceTooltip baseTooltip)
-        {
-            this.baseTooltip = baseTooltip;
-        }
-
-        public string Text()
-        {
-            string text = "SellPriceDesc".Translate();
-            text = text + baseTooltip.Text();
-            return text;
-        }
+    public string Text()
+    {
+        string text = "SellPriceDesc".Translate();
+        text = text + baseTooltip.Text();
+        return text;
     }
 }

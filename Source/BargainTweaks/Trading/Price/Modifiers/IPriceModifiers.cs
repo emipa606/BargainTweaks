@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 
-namespace BargainTweaks
+namespace BargainTweaks;
+
+public interface IPriceModifiers
 {
-    public interface IPriceModifiers
-    {
-        List<PriceModifier> Multipliers();
-        List<PriceModifier> Bonuses();
-    }
+    List<PriceModifier> Multipliers();
+    List<PriceModifier> Bonuses();
 }

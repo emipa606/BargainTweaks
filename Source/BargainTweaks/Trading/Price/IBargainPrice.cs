@@ -1,8 +1,7 @@
-namespace BargainTweaks
+namespace BargainTweaks;
+
+public interface IBargainPrice
 {
-    public interface IBargainPrice
-    {
-        float Value();
-        CombinedModifiers Modifiers();
-    }
+    float Value();
+    CombinedModifiers Modifiers();
 }
