@@ -1,38 +1,22 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <AssemblyName>BargainTweaks</AssemblyName>
-    <OutputPath>..\Assemblies\</OutputPath>
-    <OutputType>Library</OutputType>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <ProjectGuid>{1840459F-A7E4-40F5-94B0-3A41E2DCA81B}</ProjectGuid>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DebugSymbols>False</DebugSymbols>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>True</Optimize>
-    <DefineConstants>TRACE</DefineConstants>
-    <WarningLevel>4</WarningLevel>
+    <OutputPath>..\..\1.3\Assemblies</OutputPath>
+    <TargetFramework>net472</TargetFramework>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <DebugType>None</DebugType>
+    <LangVersion>latest</LangVersion>
+    <FileVersion>1.3.2</FileVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System.dll" />
-    <Reference Include="..\..\dependencies\*.dll">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="..\..\dependencies\UnityEngine\*.dll">
-      <Private>False</Private>
-    </Reference>
+    <PackageReference Include="Krafs.Rimworld.Ref">
+      <Version>*</Version>
+      <ExcludeAssets>runtime</ExcludeAssets>
+      <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Lib.Harmony">
+      <Version>*</Version>
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="*.cs" />
-    <Compile Include="*\*.cs" />
-    <Compile Include="*\*\*.cs" />
-    <Compile Include="*\*\*\*.cs" />
-    <Compile Include="*\*\*\*\*.cs" />
-    <Compile Include="*\*\*\*\*\*.cs" />
-    <Compile Include="*\*\*\*\*\*\*.cs" />
-  </ItemGroup>
-  <Target Name="Build">
-  </Target>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
+  <BT_CurrentModVersion_Label>Installed mod-version: {0}</BT_CurrentModVersion_Label>
   <BT_SettingTitle_DemandModifier>Trader demand modifier</BT_SettingTitle_DemandModifier>
   <BT_SettingTitle_DemandHintThreshold>Trader demand modifier show threshold</BT_SettingTitle_DemandHintThreshold>
   <BT_SettingTitle_DemandPriceTypeThreshold>Trader demand price type threshold</BT_SettingTitle_DemandPriceTypeThreshold>

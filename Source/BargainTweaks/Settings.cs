@@ -108,6 +108,14 @@ public class Settings : ModSettings
             ShowAdvanced(list);
         }
 
+        if (BargainTweaks.currentVersion != null)
+        {
+            list.Gap();
+            GUI.contentColor = Color.gray;
+            list.Label("BT_CurrentModVersion_Label".Translate(BargainTweaks.currentVersion));
+            GUI.contentColor = Color.white;
+        }
+
         list.End();
         Widgets.EndScrollView();
     }
