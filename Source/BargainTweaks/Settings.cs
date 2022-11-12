@@ -61,6 +61,7 @@ public class Settings : ModSettings
         Scribe_Values.Look(ref demandPriceTypeThreshold, "demandPriceTypeThreshold", 0.5f);
         // Settings
         Scribe_Values.Look(ref noSellCap, "noSellCap");
+        Scribe_Values.Look(ref invertedColors, "invertedColors");
     }
 
     public void DoWindowContents(Rect canvas)
