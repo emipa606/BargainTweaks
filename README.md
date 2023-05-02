@@ -38,3 +38,4 @@ Should be compatible with other mods, that don't change trading screen. Does not
 
 
 
+https://steamcommunity.com/sharedfiles/filedetails/changelog/2598384932]Last updated 2023-05-02

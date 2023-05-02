@@ -1,5 +1,8 @@
 # Changelog for BargainTweaks
 
+1.4.3 - Updated russian translation by Reiquard
+
+
 1.4.2 - Inverted colors-setting should now be saved
 
 
