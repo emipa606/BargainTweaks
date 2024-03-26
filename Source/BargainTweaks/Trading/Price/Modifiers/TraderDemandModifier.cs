@@ -4,29 +4,18 @@ using UnityEngine;
 
 namespace BargainTweaks;
 
-public class TraderDemandModifier : IPriceModifiers
+public class TraderDemandModifier(
+    Tradeable item,
+    IPriceModifiers originModifiers,
+    TraderDemandRoll roll)
+    : IPriceModifiers
 {
-    private readonly Tradeable item;
-    private readonly IPriceModifiers originModifiers;
-    private readonly TraderDemandRoll roll;
-
     public TraderDemandModifier(Tradeable item, IPriceModifiers originModifiers) : this(
         item,
         originModifiers,
         new TraderDemandRoll(item)
     )
     {
-    }
-
-    public TraderDemandModifier(
-        Tradeable item,
-        IPriceModifiers originModifiers,
-        TraderDemandRoll roll
-    )
-    {
-        this.item = item;
-        this.originModifiers = originModifiers;
-        this.roll = roll;
     }
 
     public List<PriceModifier> Multipliers()

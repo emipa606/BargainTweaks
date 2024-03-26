@@ -4,22 +4,13 @@ using UnityEngine;
 
 namespace BargainTweaks;
 
-public class BargainItem
+public class BargainItem(Tradeable item, BargainOffer offer)
 {
     private static readonly AccessTools.FieldRef<Tradeable, float> pricePlayerBuyRef =
         AccessTools.FieldRefAccess<Tradeable, float>("pricePlayerBuy");
 
     private static readonly AccessTools.FieldRef<Tradeable, float> pricePlayerSellRef =
         AccessTools.FieldRefAccess<Tradeable, float>("pricePlayerSell");
-
-    private readonly Tradeable item;
-    private readonly BargainOffer offer;
-
-    public BargainItem(Tradeable item, BargainOffer offer)
-    {
-        this.item = item;
-        this.offer = offer;
-    }
 
     public void RecalculatePrice()
     {

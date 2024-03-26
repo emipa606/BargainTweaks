@@ -2,10 +2,8 @@ using RimWorld;
 
 namespace BargainTweaks;
 
-public class PriceTooltip : IPriceTooltip
+public class PriceTooltip(IPriceTooltip originTooltip) : IPriceTooltip
 {
-    private readonly IPriceTooltip originTooltip;
-
     public PriceTooltip(Tradeable item, RimWorld.TradeAction tradeAction) : this(
         item,
         new TradeAction(tradeAction)
@@ -40,11 +38,6 @@ public class PriceTooltip : IPriceTooltip
             : sellTooltip
     )
     {
-    }
-
-    public PriceTooltip(IPriceTooltip originTooltip)
-    {
-        this.originTooltip = originTooltip;
     }
 
     public string Text()

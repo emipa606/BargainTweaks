@@ -3,10 +3,8 @@ using UnityEngine;
 
 namespace BargainTweaks;
 
-public class BargainSellPrice : IBargainPrice
+public class BargainSellPrice(BargainBasePrice basePrice) : IBargainPrice
 {
-    private readonly BargainBasePrice basePrice;
-
     public BargainSellPrice(Tradeable item) : this(
         item,
         new SellModifiers(item)
@@ -28,11 +26,6 @@ public class BargainSellPrice : IBargainPrice
         )
     )
     {
-    }
-
-    public BargainSellPrice(BargainBasePrice basePrice)
-    {
-        this.basePrice = basePrice;
     }
 
     public float Value()

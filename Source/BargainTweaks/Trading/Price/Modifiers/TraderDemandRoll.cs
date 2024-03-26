@@ -3,10 +3,9 @@ using RimWorld;
 
 namespace BargainTweaks;
 
-public class TraderDemandRoll
+public class TraderDemandRoll(Tradeable item, int roll)
 {
-    private readonly Tradeable item;
-    private readonly int roll;
+    private readonly Tradeable item = item;
 
     public TraderDemandRoll(Tradeable item) : this(
         item,
@@ -20,12 +19,6 @@ public class TraderDemandRoll
             : 0
     )
     {
-    }
-
-    public TraderDemandRoll(Tradeable item, int roll)
-    {
-        this.item = item;
-        this.roll = roll;
     }
 
     public float Value()

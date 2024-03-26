@@ -3,17 +3,8 @@ using UnityEngine;
 
 namespace BargainTweaks;
 
-public class BargainBasePrice : IBargainPrice
+public class BargainBasePrice(Tradeable item, CombinedModifiers modifiers) : IBargainPrice
 {
-    private readonly Tradeable item;
-    private readonly CombinedModifiers modifiers;
-
-    public BargainBasePrice(Tradeable item, CombinedModifiers modifiers)
-    {
-        this.item = item;
-        this.modifiers = modifiers;
-    }
-
     public CombinedModifiers Modifiers()
     {
         return modifiers;

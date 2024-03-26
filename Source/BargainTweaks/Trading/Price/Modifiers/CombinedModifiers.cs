@@ -2,15 +2,8 @@ using System.Collections.Generic;
 
 namespace BargainTweaks;
 
-public class CombinedModifiers : IPriceModifiers
+public class CombinedModifiers(IPriceModifiers priceModifiers) : IPriceModifiers
 {
-    private readonly IPriceModifiers priceModifiers;
-
-    public CombinedModifiers(IPriceModifiers priceModifiers)
-    {
-        this.priceModifiers = priceModifiers;
-    }
-
     public List<PriceModifier> Bonuses()
     {
         return priceModifiers.Bonuses();
@@ -26,7 +19,7 @@ public class CombinedModifiers : IPriceModifiers
         var bonus = 1f;
         foreach (var pm in priceModifiers.Bonuses())
         {
-            bonus = bonus + pm.Value();
+            bonus += pm.Value();
         }
 
         return bonus;
@@ -37,7 +30,7 @@ public class CombinedModifiers : IPriceModifiers
         var mult = 1f;
         foreach (var pm in priceModifiers.Multipliers())
         {
-            mult = mult * pm.Value();
+            mult *= pm.Value();
         }
 
         return mult;

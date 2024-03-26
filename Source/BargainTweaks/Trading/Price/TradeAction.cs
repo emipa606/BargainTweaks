@@ -1,14 +1,7 @@
 namespace BargainTweaks;
 
-public class TradeAction
+public class TradeAction(RimWorld.TradeAction action)
 {
-    private readonly RimWorld.TradeAction action;
-
-    public TradeAction(RimWorld.TradeAction action)
-    {
-        this.action = action;
-    }
-
     public RimWorld.TradeAction Action()
     {
         return action;

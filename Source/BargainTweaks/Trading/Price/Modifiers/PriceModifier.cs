@@ -2,17 +2,8 @@ using UnityEngine;
 
 namespace BargainTweaks;
 
-public class PriceModifier
+public class PriceModifier(string name, float value)
 {
-    private readonly string name;
-    private readonly float value;
-
-    public PriceModifier(string name, float value)
-    {
-        this.name = name;
-        this.value = value;
-    }
-
     public string Name()
     {
         return name;

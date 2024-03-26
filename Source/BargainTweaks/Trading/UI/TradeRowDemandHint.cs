@@ -4,11 +4,9 @@ using Verse;
 
 namespace BargainTweaks;
 
-public class TradeRowDemandHint
+public class TradeRowDemandHint(Rect rect, Tradeable item, TraderDemandRoll roll)
 {
-    private readonly Tradeable item;
-    private readonly Rect rect;
-    private readonly TraderDemandRoll roll;
+    private readonly Rect rect = rect;
 
     public TradeRowDemandHint(Rect rect, Tradeable item) : this(
         rect,
@@ -16,13 +14,6 @@ public class TradeRowDemandHint
         new TraderDemandRoll(item)
     )
     {
-    }
-
-    public TradeRowDemandHint(Rect rect, Tradeable item, TraderDemandRoll roll)
-    {
-        this.rect = rect;
-        this.item = item;
-        this.roll = roll;
     }
 
     public void Draw()

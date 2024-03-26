@@ -4,8 +4,7 @@ using RimWorld;
 namespace BargainTweaks;
 
 // public string Tradeable::GetPriceTooltip(TradeAction action)
-[HarmonyPatch(typeof(Tradeable))]
-[HarmonyPatch("GetPriceTooltip")]
+[HarmonyPatch(typeof(Tradeable), "GetPriceTooltip")]
 public static class Tradeable_GetPriceTooltip_Patch
 {
     private static CachedTooltip tooltip = new CachedTooltip();

@@ -2,11 +2,8 @@ using RimWorld;
 
 namespace BargainTweaks;
 
-public class BargainOffer
+public class BargainOffer(IBargainPrice buyPrice, IBargainPrice sellPrice)
 {
-    private readonly IBargainPrice buyPrice;
-    private readonly IBargainPrice sellPrice;
-
     public BargainOffer(Tradeable item) : this(
         item,
         new BuyModifiers(item),
@@ -54,12 +51,6 @@ public class BargainOffer
         )
     )
     {
-    }
-
-    public BargainOffer(IBargainPrice buyPrice, IBargainPrice sellPrice)
-    {
-        this.buyPrice = buyPrice;
-        this.sellPrice = sellPrice;
     }
 
     public IBargainPrice BuyPrice()

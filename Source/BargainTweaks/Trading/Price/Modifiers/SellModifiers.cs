@@ -4,11 +4,8 @@ using RimWorld;
 
 namespace BargainTweaks;
 
-public class SellModifiers : IPriceModifiers
+public class SellModifiers(Tradeable item, IPriceModifiers originModifiers) : IPriceModifiers
 {
-    private readonly Tradeable item;
-    private readonly IPriceModifiers originModifiers;
-
     public SellModifiers(Tradeable item) : this(
         item,
         new BaseModifiers(item, new TradeAction(RimWorld.TradeAction.PlayerSells))
@@ -16,15 +13,8 @@ public class SellModifiers : IPriceModifiers
     {
     }
 
-    public SellModifiers(Tradeable item, IPriceModifiers originModifiers)
+    public SellModifiers(IPriceModifiers originModifiers) : this(null, originModifiers)
     {
-        this.item = item;
-        this.originModifiers = originModifiers;
-    }
-
-    public SellModifiers(IPriceModifiers originModifiers)
-    {
-        this.originModifiers = originModifiers;
     }
 
     public List<PriceModifier> Bonuses()

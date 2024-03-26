@@ -3,27 +3,17 @@ using RimWorld;
 
 namespace BargainTweaks;
 
-public class BuyModifiers : IPriceModifiers
+public class BuyModifiers(Tradeable item, IPriceModifiers originModifiers) : IPriceModifiers
 {
-    private readonly Tradeable item;
-    private readonly IPriceModifiers originModifiers;
+    private readonly Tradeable item = item;
 
-    public BuyModifiers(Tradeable item) : this(
-        item,
-        new BaseModifiers(item, new TradeAction(RimWorld.TradeAction.PlayerBuys))
-    )
+    public BuyModifiers(Tradeable item) : this(item,
+        new BaseModifiers(item, new TradeAction(RimWorld.TradeAction.PlayerBuys)))
     {
     }
 
-    public BuyModifiers(Tradeable item, IPriceModifiers originModifiers)
+    public BuyModifiers(IPriceModifiers originModifiers) : this(null, originModifiers)
     {
-        this.item = item;
-        this.originModifiers = originModifiers;
-    }
-
-    public BuyModifiers(IPriceModifiers originModifiers)
-    {
-        this.originModifiers = originModifiers;
     }
 
     public List<PriceModifier> Bonuses()

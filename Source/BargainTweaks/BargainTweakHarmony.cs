@@ -9,7 +9,6 @@ internal static class BargainTweakHarmony
 {
     static BargainTweakHarmony()
     {
-        var harmony = new Harmony("sladki.rimworld.mod.bargainwweaks");
-        harmony.PatchAll(Assembly.GetExecutingAssembly());
+        new Harmony("sladki.rimworld.mod.bargainwweaks").PatchAll(Assembly.GetExecutingAssembly());
     }
 }

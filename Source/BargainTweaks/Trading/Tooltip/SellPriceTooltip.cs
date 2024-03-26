@@ -3,10 +3,8 @@ using Verse;
 
 namespace BargainTweaks;
 
-public class SellPriceTooltip : IPriceTooltip
+public class SellPriceTooltip(BasePriceTooltip baseTooltip) : IPriceTooltip
 {
-    private readonly BasePriceTooltip baseTooltip;
-
     public SellPriceTooltip(Tradeable item) : this(
         item,
         new BargainSellPrice(item)
@@ -23,15 +21,10 @@ public class SellPriceTooltip : IPriceTooltip
     {
     }
 
-    public SellPriceTooltip(BasePriceTooltip baseTooltip)
-    {
-        this.baseTooltip = baseTooltip;
-    }
-
     public string Text()
     {
         string text = "SellPriceDesc".Translate();
-        text = text + baseTooltip.Text();
+        text += baseTooltip.Text();
         return text;
     }
 }

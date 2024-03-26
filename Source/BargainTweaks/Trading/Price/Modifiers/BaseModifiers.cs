@@ -5,23 +5,13 @@ using Verse;
 
 namespace BargainTweaks;
 
-public class BaseModifiers : IPriceModifiers
+public class BaseModifiers(Tradeable item, TradeAction action) : IPriceModifiers
 {
     private static readonly AccessTools.FieldRef<Tradeable, float> priceGain_SettlementRef =
         AccessTools.FieldRefAccess<Tradeable, float>("priceGain_Settlement");
 
     private static readonly AccessTools.FieldRef<Tradeable, float> priceGain_PlayerNegotiatorRef =
         AccessTools.FieldRefAccess<Tradeable, float>("priceGain_PlayerNegotiator");
-
-    private readonly TradeAction action;
-
-    private readonly Tradeable item;
-
-    public BaseModifiers(Tradeable item, TradeAction action)
-    {
-        this.item = item;
-        this.action = action;
-    }
 
     public List<PriceModifier> Multipliers()
     {

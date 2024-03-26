@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace BargainTweaks;
 
-public class EquilibriumModifier : IPriceModifiers
+public class EquilibriumModifier(
+    CombinedModifiers originModifiers,
+    CombinedModifiers buyModifiers,
+    CombinedModifiers sellModifiers)
+    : IPriceModifiers
 {
-    private readonly CombinedModifiers buyModifiers;
-    private readonly CombinedModifiers originModifiers;
-    private readonly CombinedModifiers sellModifiers;
-
     public EquilibriumModifier(
         IPriceModifiers originModifiers,
         IPriceModifiers buyModifiers,
@@ -19,17 +19,6 @@ public class EquilibriumModifier : IPriceModifiers
         new CombinedModifiers(sellModifiers)
     )
     {
-    }
-
-    public EquilibriumModifier(
-        CombinedModifiers originModifiers,
-        CombinedModifiers buyModifiers,
-        CombinedModifiers sellModifiers
-    )
-    {
-        this.originModifiers = originModifiers;
-        this.buyModifiers = buyModifiers;
-        this.sellModifiers = sellModifiers;
     }
 
     public List<PriceModifier> Bonuses()
@@ -54,8 +43,7 @@ public class EquilibriumModifier : IPriceModifiers
             return result;
         }
 
-        result = new List<PriceModifier>
-            { BonusOfEquilibrium(bonusOfEqulibrium, -1f * (bonus / Mathf.Abs(bonus))) };
+        result = [BonusOfEquilibrium(bonusOfEqulibrium, -1f * (bonus / Mathf.Abs(bonus)))];
 
         return result;
     }

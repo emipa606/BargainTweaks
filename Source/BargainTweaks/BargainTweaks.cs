@@ -13,7 +13,7 @@ internal class BargainTweaks : Mod
     {
         settings = GetSettings<Settings>();
         currentVersion =
-            VersionFromManifest.GetVersionFromModMetaData(ModLister.GetActiveModWithIdentifier("Mlie.BargainTweaks"));
+            VersionFromManifest.GetVersionFromModMetaData(content.ModMetaData);
     }
 
     public override string SettingsCategory()

@@ -3,26 +3,17 @@ using Verse;
 
 namespace BargainTweaks;
 
-public class BasePriceTooltip
+public class BasePriceTooltip(Tradeable item, IBargainPrice price)
 {
-    private readonly Tradeable item;
-    private readonly IBargainPrice price;
-
-    public BasePriceTooltip(Tradeable item, IBargainPrice price)
-    {
-        this.item = item;
-        this.price = price;
-    }
-
     public string Text()
     {
         var text = $"\n\n{BaseMarketValueText()}\n";
         // Multipliers
-        text = text + MultipliersText();
+        text += MultipliersText();
         // Bonuses
         text = $"{text}{BonusText()}\n";
         // Final Price
-        text = text + FinalPriceText();
+        text += FinalPriceText();
         return text;
     }
 
