@@ -25,7 +25,7 @@ public class SellModifiers(Tradeable item, IPriceModifiers originModifiers) : IP
     public List<PriceModifier> Multipliers()
     {
         var multipliers = new List<PriceModifier>
-            { new PriceModifier("Selling", 1f - BargainTweaks.settings.sellingModifier) };
+            { new("Selling", 1f - BargainTweaks.settings.sellingModifier) };
         multipliers.AddRange(originModifiers.Multipliers());
         multipliers.Add(new PriceModifier(
             "ItemSellPriceFactor",

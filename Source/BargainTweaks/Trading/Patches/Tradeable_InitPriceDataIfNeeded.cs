@@ -5,7 +5,7 @@ namespace BargainTweaks;
 
 // private void Tradeable::InitPriceDataIfNeeded()
 [HarmonyPatch(typeof(Tradeable), "InitPriceDataIfNeeded")]
-public static class Tradeable_InitPriceDataIfNeeded_Patch
+public static class Tradeable_InitPriceDataIfNeeded
 {
     public static bool Prefix(ref Tradeable __instance, ref bool __state)
     {

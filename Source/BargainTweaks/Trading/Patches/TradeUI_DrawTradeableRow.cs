@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace BargainTweaks;
 
-[HarmonyPatch(typeof(TradeUI), "DrawTradeableRow")]
-public static class TradeUI_DrawTradeableRow_Patch
+[HarmonyPatch(typeof(TradeUI), nameof(TradeUI.DrawTradeableRow))]
+public static class TradeUI_DrawTradeableRow
 {
     public static void Postfix(Rect rect, Tradeable trad)
     {

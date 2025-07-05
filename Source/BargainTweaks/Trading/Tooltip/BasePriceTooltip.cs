@@ -7,22 +7,22 @@ public class BasePriceTooltip(Tradeable item, IBargainPrice price)
 {
     public string Text()
     {
-        var text = $"\n\n{BaseMarketValueText()}\n";
+        var text = $"\n\n{baseMarketValueText()}\n";
         // Multipliers
-        text += MultipliersText();
+        text += multipliersText();
         // Bonuses
-        text = $"{text}{BonusText()}\n";
+        text = $"{text}{bonusText()}\n";
         // Final Price
-        text += FinalPriceText();
+        text += finalPriceText();
         return text;
     }
 
-    private string BaseMarketValueText()
+    private string baseMarketValueText()
     {
         return StatDefOf.MarketValue.LabelCap + ": " + item.BaseMarketValue.ToStringMoney("F2");
     }
 
-    private string MultipliersText()
+    private string multipliersText()
     {
         var text = string.Empty;
         foreach (var pm in price.Modifiers().Multipliers())
@@ -36,7 +36,7 @@ public class BasePriceTooltip(Tradeable item, IBargainPrice price)
         return text != string.Empty ? text + "\n" : text;
     }
 
-    private string BonusText()
+    private string bonusText()
     {
         var text = string.Empty;
         foreach (var pm in price.Modifiers().Bonuses())
@@ -51,7 +51,7 @@ public class BasePriceTooltip(Tradeable item, IBargainPrice price)
         return text != string.Empty ? $"{text}\n" : text;
     }
 
-    private string FinalPriceText()
+    private string finalPriceText()
     {
         var p = price.Value();
         return "FinalPrice".Translate() + ": $" + (p >= 100

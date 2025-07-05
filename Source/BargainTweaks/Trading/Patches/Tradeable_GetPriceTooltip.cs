@@ -4,10 +4,10 @@ using RimWorld;
 namespace BargainTweaks;
 
 // public string Tradeable::GetPriceTooltip(TradeAction action)
-[HarmonyPatch(typeof(Tradeable), "GetPriceTooltip")]
-public static class Tradeable_GetPriceTooltip_Patch
+[HarmonyPatch(typeof(Tradeable), nameof(Tradeable.GetPriceTooltip))]
+public static class Tradeable_GetPriceTooltip
 {
-    private static CachedTooltip tooltip = new CachedTooltip();
+    private static CachedTooltip tooltip = new();
 
     public static void Postfix(Tradeable __instance, RimWorld.TradeAction action, ref string __result)
     {

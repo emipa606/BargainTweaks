@@ -2,5 +2,16 @@
   "Continued": true,
   "CanAdd": "0",
   "CanRemove": "0",
-  "PreviewVersion": "1.5"
+  "PreviewVersion": "1.6",
+  "LastXmlCleaning": "2025-07-05T21:57:15.1216458+02:00",
+  "SocialImageSet": true,
+  "Patches": false,
+  "Defs": false,
+  "Assemblies": true,
+  "LinesOfCode": 32713.0,
+  "LinesOfXML": 0,
+  "SearchTags": [
+    " traders",
+    " economy"
+  ]
 }

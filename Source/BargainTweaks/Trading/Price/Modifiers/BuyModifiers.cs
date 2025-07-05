@@ -24,7 +24,7 @@ public class BuyModifiers(Tradeable item, IPriceModifiers originModifiers) : IPr
     public List<PriceModifier> Multipliers()
     {
         var multipliers = new List<PriceModifier>
-            { new PriceModifier("Buying", 1f + BargainTweaks.settings.buyingModifier) };
+            { new("Buying", 1f + BargainTweaks.settings.buyingModifier) };
         multipliers.AddRange(originModifiers.Multipliers());
         return multipliers;
     }

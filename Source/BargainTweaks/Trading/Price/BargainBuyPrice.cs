@@ -19,7 +19,7 @@ public class BargainBuyPrice(BargainBasePrice basePrice) : IBargainPrice
     {
     }
 
-    public BargainBuyPrice(Tradeable item, CombinedModifiers modifiers) : this(
+    private BargainBuyPrice(Tradeable item, CombinedModifiers modifiers) : this(
         new BargainBasePrice(
             item,
             modifiers

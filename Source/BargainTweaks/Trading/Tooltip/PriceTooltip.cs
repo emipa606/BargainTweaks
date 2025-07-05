@@ -11,7 +11,7 @@ public class PriceTooltip(IPriceTooltip originTooltip) : IPriceTooltip
     {
     }
 
-    public PriceTooltip(Tradeable item, TradeAction tradeAction) : this(
+    private PriceTooltip(Tradeable item, TradeAction tradeAction) : this(
         tradeAction,
         new BuyPriceTooltip(item),
         new SellPriceTooltip(item)
@@ -28,7 +28,7 @@ public class PriceTooltip(IPriceTooltip originTooltip) : IPriceTooltip
     {
     }
 
-    public PriceTooltip(
+    private PriceTooltip(
         TradeAction tradeAction,
         IPriceTooltip buyTooltip,
         IPriceTooltip sellTooltip

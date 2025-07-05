@@ -42,12 +42,8 @@ public class TraderDemandModifier(
     private float PriceTypeMult(Tradeable tradeable)
     {
         var mult = 1f;
-        if (!(BargainTweaks.settings.demandPriceTypeThreshold > 0f))
-        {
-            return mult;
-        }
-
-        if (tradeable.PriceTypeFor(RimWorld.TradeAction.PlayerBuys).PriceMultiplier() == 1f &&
+        if (!(BargainTweaks.settings.demandPriceTypeThreshold > 0f) ||
+            tradeable.PriceTypeFor(RimWorld.TradeAction.PlayerBuys).PriceMultiplier() == 1f &&
             tradeable.PriceTypeFor(RimWorld.TradeAction.PlayerSells).PriceMultiplier() == 1f)
         {
             return mult;

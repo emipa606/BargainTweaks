@@ -17,10 +17,10 @@ public class BaseModifiers(Tradeable item, TradeAction action) : IPriceModifiers
     {
         var mults = new List<PriceModifier>(2)
         {
-            new PriceModifier("DifficultyLevel",
+            new("DifficultyLevel",
                 1f - (action.Effect() * (Find.Storyteller.difficulty.tradePriceFactorLoss *
                                          BargainTweaks.settings.difficultyMultEff))),
-            new PriceModifier("TraderTypePrice",
+            new("TraderTypePrice",
                 1f + ((item.PriceTypeFor(action.Action()).PriceMultiplier() - 1f) *
                       BargainTweaks.settings.pricetypeMultEff))
         };
@@ -31,10 +31,10 @@ public class BaseModifiers(Tradeable item, TradeAction action) : IPriceModifiers
     {
         var bonuses = new List<PriceModifier>(2)
         {
-            new PriceModifier("YourNegotiatorBonus",
+            new("YourNegotiatorBonus",
                 action.Effect() *
                 (priceGain_PlayerNegotiatorRef(item) / 0.3f * BargainTweaks.settings.negotiatorBonus)),
-            new PriceModifier("TradeWithFactionBaseBonus",
+            new("TradeWithFactionBaseBonus",
                 action.Effect() * (priceGain_SettlementRef(item) / 0.02f * BargainTweaks.settings.factionBaseBonus))
         };
         return bonuses;

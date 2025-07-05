@@ -31,12 +31,12 @@ public class TradeRowDemandHint(Rect rect, Tradeable item, TraderDemandRoll roll
         }
 
         GUI.BeginGroup(rect);
-        DrawSellHint(rollValue);
-        DrawBuyHint(rollValue);
+        drawSellHint(rollValue);
+        drawBuyHint(rollValue);
         GUI.EndGroup();
     }
 
-    private void DrawSellHint(float sellRoll)
+    private void drawSellHint(float sellRoll)
     {
         var hint = new Rect(rect.width - 410f, 5f, 5f, rect.height - 10f);
         var colorValue = sellRoll;
@@ -45,10 +45,10 @@ public class TradeRowDemandHint(Rect rect, Tradeable item, TraderDemandRoll roll
             colorValue *= -1f;
         }
 
-        Widgets.DrawBoxSolid(hint, Color(colorValue));
+        Widgets.DrawBoxSolid(hint, color(colorValue));
     }
 
-    private void DrawBuyHint(float buyRoll)
+    private void drawBuyHint(float buyRoll)
     {
         var hint = new Rect(rect.width - 185f, 5f, 5f, rect.height - 10f);
         var colorValue = buyRoll * -1f;
@@ -57,10 +57,10 @@ public class TradeRowDemandHint(Rect rect, Tradeable item, TraderDemandRoll roll
             colorValue *= -1f;
         }
 
-        Widgets.DrawBoxSolid(hint, Color(colorValue));
+        Widgets.DrawBoxSolid(hint, color(colorValue));
     }
 
-    private Color Color(float colorRoll)
+    private static Color color(float colorRoll)
     {
         var r = Mathf.Min(1f, 1f - colorRoll);
         var g = Mathf.Min(1f, 1f + colorRoll);

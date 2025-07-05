@@ -26,7 +26,7 @@ public class Settings : ModSettings
     public bool noSellCap;
     public float pricetypeMultEff = 1.0f;
 
-    public Vector2 scrollPosition;
+    private Vector2 scrollPosition;
 
     // Base modifiers
     public float sellingModifier = 0.4f;
@@ -37,7 +37,7 @@ public class Settings : ModSettings
     public float sellPriceFactorMultEff = 1.0f;
 
     // Settings
-    public bool showAdvanced;
+    private bool showAdvanced;
 
     public override void ExposeData()
     {
@@ -212,7 +212,7 @@ public class Settings : ModSettings
         int round = -1)
     {
         list.Label(
-            title + ": " + v,
+            (TaggedString)(title + ": " + v),
             -1.0f,
             hint
         );

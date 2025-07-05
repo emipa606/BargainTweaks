@@ -12,7 +12,7 @@ public class BargainOffer(IBargainPrice buyPrice, IBargainPrice sellPrice)
     {
     }
 
-    public BargainOffer(Tradeable item, BuyModifiers buyModifiers, SellModifiers sellModifiers) : this(
+    private BargainOffer(Tradeable item, BuyModifiers buyModifiers, SellModifiers sellModifiers) : this(
         item,
         new TraderDemandModifier(
             item,
@@ -26,7 +26,7 @@ public class BargainOffer(IBargainPrice buyPrice, IBargainPrice sellPrice)
     {
     }
 
-    public BargainOffer(Tradeable item, TraderDemandModifier buyModifiers,
+    private BargainOffer(Tradeable item, TraderDemandModifier buyModifiers,
         TraderDemandModifier sellModifiers) : this(
         new BargainBuyPrice(
             item,
