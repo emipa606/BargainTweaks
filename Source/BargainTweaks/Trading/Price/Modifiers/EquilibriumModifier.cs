@@ -48,7 +48,7 @@ public class EquilibriumModifier(
         return result;
     }
 
-    private PriceModifier BonusOfEquilibrium(float bonusOfEqulibrium, float effectMult)
+    private static PriceModifier BonusOfEquilibrium(float bonusOfEqulibrium, float effectMult)
     {
         var bonusTitle = bonusOfEqulibrium > 0 ? "BT_BonusCapped" : "BT_PriceCapped";
         return new PriceModifier(bonusTitle, bonusOfEqulibrium * effectMult);

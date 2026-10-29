@@ -39,7 +39,7 @@ public class TraderDemandModifier(
         );
     }
 
-    private float PriceTypeMult(Tradeable tradeable)
+    private static float PriceTypeMult(Tradeable tradeable)
     {
         var mult = 1f;
         if (!(BargainTweaks.settings.demandPriceTypeThreshold > 0f) ||

@@ -1,3 +1,4 @@
+using System.Linq;
 using RimWorld;
 using Verse;
 
@@ -25,27 +26,21 @@ public class BasePriceTooltip(Tradeable item, IBargainPrice price)
     private string multipliersText()
     {
         var text = string.Empty;
-        foreach (var pm in price.Modifiers().Multipliers())
+        foreach (var pm in price.Modifiers().Multipliers().Where(pm => pm.Value() != 1.0f))
         {
-            if (pm.Value() != 1.0f)
-            {
-                text = $"{text} x {pm.Value():F2} (" + pm.Name().Translate() + ")\n";
-            }
+            text = $"{text} x {pm.Value():F2} (" + pm.Name().Translate() + ")\n";
         }
 
-        return text != string.Empty ? text + "\n" : text;
+        return text != string.Empty ? $"{text}\n" : text;
     }
 
     private string bonusText()
     {
         var text = string.Empty;
-        foreach (var pm in price.Modifiers().Bonuses())
+        foreach (var pm in price.Modifiers().Bonuses().Where(pm => pm.Value() != 0.0f))
         {
-            if (pm.Value() != 0.0f)
-            {
-                text = text + pm.Name().Translate()
-                            + ": " + pm.Value().ToStringPercent() + "\n";
-            }
+            text = text + pm.Name().Translate()
+                        + ": " + pm.Value().ToStringPercent() + "\n";
         }
 
         return text != string.Empty ? $"{text}\n" : text;

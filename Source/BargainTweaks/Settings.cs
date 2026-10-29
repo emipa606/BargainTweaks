@@ -28,13 +28,13 @@ public class Settings : ModSettings
 
     private Vector2 scrollPosition;
 
-    // Base modifiers
-    public float sellingModifier = 0.4f;
-
     // Sell price factor
     public float sellPriceFactorBias;
 
     public float sellPriceFactorMultEff = 1.0f;
+
+    // Base modifiers
+    public float sellingModifier = 0.4f;
 
     // Settings
     private bool showAdvanced;
@@ -208,7 +208,8 @@ public class Settings : ModSettings
         );
     }
 
-    private float SliderWithLabel(Listing_Standard list, string title, string hint, float v, float min, float max,
+    private static float SliderWithLabel(Listing_Standard list, string title, string hint, float v, float min,
+        float max,
         int round = -1)
     {
         list.Label(
@@ -223,13 +224,5 @@ public class Settings : ModSettings
         }
 
         return result;
-    }
-
-    private void Category(Listing_Standard list, string title)
-    {
-        Text.Font = GameFont.Medium;
-        list.Label(title);
-        Text.Font = GameFont.Small;
-        list.GapLine(2f);
     }
 }
